@@ -55,6 +55,7 @@ public class Main {
                 menu();
                 break;
             case 6:
+                g.recorrerGrafo();
                 menu();
                 break;
             default: break;

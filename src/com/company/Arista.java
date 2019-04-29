@@ -43,4 +43,5 @@ public class Arista {
     public void setVisitada(boolean visitada) {
         this.visitada = visitada;
     }
+
 }

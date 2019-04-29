@@ -47,4 +47,7 @@ public class Graph {
     public void insertarArista(){
 
     }
+
+    public void recorrerGrafo(){
+    }
 }
