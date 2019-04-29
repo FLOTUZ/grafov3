@@ -43,6 +43,7 @@ public class Main {
                 break;
             case 3:
                 g.insertarArista();
+                menu();
                 break;
             case 4:
                 System.out.println("Ingrese nombre contenido del nodo");

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Graph {
     protected static Scanner leer = new Scanner(System.in);
     protected ArrayList<Nodo> listaNodos;
-    protected ArrayList<Arista> listaAristas;
+    protected ArrayList<Arista> listaAristas = new ArrayList<>();
 
     public void insertarNodo(String etiqueta) {
             if (listaNodos == null) listaNodos = new ArrayList<>();
@@ -18,7 +18,11 @@ public class Graph {
     public void mostrarNodos(){
         System.out.println("\t\t Nodos en el grafo");
         for (int i = 0; i <listaNodos.size() ; i++) {
-            System.out.print(" (" + listaNodos.get(i).getEtiqueta() + ") ");
+            System.out.print(" " + i + " ");
+        }
+        System.out.println();
+        for (int i = 0; i <listaNodos.size() ; i++) {
+            System.out.print("(" + listaNodos.get(i).getEtiqueta() + ")");
         }
         System.out.println();
     }
@@ -36,20 +40,11 @@ public class Graph {
         }
         return existe;
     }
+
     public void eliminarNodo(){
     }
-
+//Se insertan las aristas para su posterior recorrido
     public void insertarArista(){
-        System.out.println("Defina el nodo origen");
-            mostrarNodos();
-            Nodo origen = listaNodos.get(leer.nextInt());
-        System.out.println("Defina el nodo destino");
-            mostrarNodos();
-            Nodo destino = listaNodos.get(leer.nextInt());
-        System.out.println("Defina el peso de la arista");
-            int peso = leer.nextInt();
-        listaAristas.add(new Arista(origen,destino,peso));
-        System.out.println(">>> Arista agregada <<<");
 
     }
 }

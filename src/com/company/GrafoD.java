@@ -4,14 +4,8 @@ public class GrafoD extends Graph{
     GrafoD(){
     }
     public void eliminarNodo() {
-        System.out.println("Introduzca el numero de nodo a eliminar");
-        for (int i = 0; i < listaNodos.size(); i++) {
-            System.out.print(" " + i + " ");
-        }
-        System.out.println();
-        for (int i = 0; i < listaNodos.size(); i++) {
-            System.out.print("(" +listaNodos.get(i).getEtiqueta() + ")");
-        }
+        System.out.println("Seleccione el numero del nodo");
+        mostrarNodos();
         Nodo origen = listaNodos.get(leer.nextInt());
         for (int i = 0; i <listaAristas.size() ; i++) {
             //Se busca se el nodo seleccionado tiene aristas
@@ -22,7 +16,17 @@ public class GrafoD extends Graph{
         listaNodos.remove(origen);
     }
 
-    public void insertarArista(Nodo origen, Nodo destino, int peso) {
+    public void insertarArista() {
+        System.out.println("Defina el nodo origen");
+        mostrarNodos();
+        Nodo origen = listaNodos.get(leer.nextInt());
+        System.out.println("Defina el nodo destino");
+        mostrarNodos();
+        Nodo destino = listaNodos.get(leer.nextInt());
+        System.out.println("Defina el peso de la arista");
+        int peso = leer.nextInt();
 
+        listaAristas.add(new Arista(origen, destino, peso));
+        System.out.println(">>> Arista agregada <<<");
     }
 }
