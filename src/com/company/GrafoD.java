@@ -31,34 +31,28 @@ public class GrafoD extends Graph{
     }
 
     public void recorrerGrafo() {
-        System.out.println("Seleccione el nodo inicial en el recorrido");
+        int inic = 0;
+        System.out.println("Ingrese vertice origen ");
             mostrarNodos();
             Nodo inicio = listaNodos.get(leer.nextInt());
-            //Se busca el nodo con la misma etiqueta del nodo Inicio
-        for (int i = 0; i <listaAristas.size() ; i++) {
-            //Se comparan la etiqueta del nodo inicio con las etiquetas del nodo origen
-            if (listaAristas.get(i).getOrigen().getEtiqueta().equalsIgnoreCase(inicio.getEtiqueta())){
-                //Se inicia el recorrido desde la primer coincidencia
-                inicioRecorrido(i);
+            //Se buca en el nodo origen en la lista de Aristas
+        for (int i = 0; i < listaAristas.size(); i++) {
+            if (listaAristas.get(i).getOrigen().equals(inicio)) {
+                inic = i;
                 break;
             }
         }
+        impresion(inic,inicio);
 
     }
 
-    private void inicioRecorrido(int i) {
-        /*Se empieza desde la Arista con el nodo origen seleccionado anteriormente
-         *Se asigna el valor "Visitado" a cada arista recorrida
-         */
-        listaAristas.get(i).setVisitada(true);
-        //Se imprime en formato (Nodo)--numero-->(Nodo)
-        System.out.print("("+listaAristas.get(i).getOrigen().getEtiqueta());
-        System.out.print(")--"+listaAristas.get(i).getPeso()+"-->(");
-        System.out.println(listaAristas.get(i).getDestino().getEtiqueta()+")");
-        //Si "i" es menor que la listaAristas
-        if (i<listaAristas.size())inicioRecorrido(i++);
-        //Si "i" es igual a la listaAristas se comprueba si hay aristas sin recorrer
-        if (i==listaAristas.size())inicioRecorrido(0);
+    private void impresion(int inic, Nodo inicio) {
+        for (int i = 0; i <listaAristas.size() ; i++) {
+            System.out.println(listaAristas.get(inic).getOrigen().getEtiqueta()+ "-->");
+                Nodo destno = listaAristas.get(inic).getDestino();
+            System.out.println(destno.getEtiqueta());
 
+            if (destno != listaNodos.get(inic)) impresion(inic,destno);
+        }
     }
 }
