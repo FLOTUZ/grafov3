@@ -12,4 +12,9 @@ public class Nodo {
     public String getEtiqueta() {
         return etiqueta;
     }
+
+    @Override
+    public String toString() {
+        return "(" + etiqueta +")";
+    }
 }

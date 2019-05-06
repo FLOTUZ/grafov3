@@ -30,7 +30,7 @@ public class GrafoD extends Graph{
         System.out.println(">>> Arista agregada <<<");
     }
 
-    public void recorrerGrafo() {
+    /*public void recorrerGrafo() {
         int inic = 0;
         System.out.println("Ingrese vertice origen ");
             mostrarNodos();
@@ -54,5 +54,5 @@ public class GrafoD extends Graph{
 
             if (destno != listaNodos.get(inic)) impresion(inic,destno);
         }
-    }
+    }*/
 }

@@ -44,4 +44,8 @@ public class Arista {
         this.visitada = visitada;
     }
 
+    @Override
+    public String toString() {
+        return getOrigen().toString() +"--"+ getPeso() +"--"+ getDestino().toString();
+    }
 }

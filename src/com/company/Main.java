@@ -55,7 +55,12 @@ public class Main {
                 menu();
                 break;
             case 6:
-                g.recorrerGrafo();
+                //Buscar el nodo origen ingresado por el usuario
+                System.out.println("Ingrese nodo inicial");
+                    g.mostrarNodos();
+                Nodo inicial = g.listaNodos.get(leer.nextInt());
+                g.recorrerGrafo(inicial);
+                g.visiadasFalse();
                 menu();
                 break;
             default: break;

@@ -48,6 +48,55 @@ public class Graph {
 
     }
 
-    public void recorrerGrafo(){
+    public void recorrerGrafo(Nodo inicial){
+        int j;
+
+        for (int i = 0; i < listaAristas.size(); i++) {
+
+            if (listaAristas.get(i).getOrigen().equals(inicial)){
+            //Si llega aqui, significa que el nodo inicial si tiene aristas
+                if (!listaAristas.get(i).isVisitada()) {
+                    System.out.println(listaAristas.get(i));
+                    listaAristas.get(i).setVisitada(true);
+
+                }
+            }
+        }
+        for (j = 0; j < listaAristas.size(); j++) {
+            try {
+                if (!visitadas()) {
+                    recorrerGrafo(listaAristas.get(j).getDestino());
+                } else {
+                    break;
+                }
+            }catch (Exception e){
+                System.out.println("Se recorrio el grafo");
+            }
+        }
+
+        //Obtener la posicion de lista de arista
+
+        //Obtener el nodo destino de la arista
+        //Buscar el nodo destino en la lista de aristas
+
+        //Si existe, Obtener la posicion de lista de arista
+        //Obtener el nodo destino de la arista
+
+    }
+
+    private boolean visitadas() {
+        boolean visitadas = true;
+        for (int i = 0; i < listaAristas.size(); i++) {
+            if (!listaAristas.get(i).isVisitada()){
+                visitadas = false;
+            }
+        }
+        return visitadas;
+    }
+
+    public void visiadasFalse(){
+        for (int i = 0; i < listaAristas.size(); i++) {
+            listaAristas.get(i).setVisitada(false);
+        }
     }
 }
